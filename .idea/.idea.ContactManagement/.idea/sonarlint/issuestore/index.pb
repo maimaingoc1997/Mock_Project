@@ -1,0 +1,27 @@
+
+U
+%ContactManagementAPI/appsettings.json,0\b\0b11ba8dc342b6346e02ff479ac239cdee2532a6
+V
+&ContactManagementAPI/Models/Contact.cs,1\d\1dfe1cc231d95f13a227d15849c4f3cc2958efa6
+Z
+*ContactManagementAPI/Models/ManagerName.cs,d\9\d9d23d152b3bb3f26404b8ef23cc800bfa653ab4
+O
+ContactManagementAPI/Program.cs,5\a\5ad99a434ae0c5e2dc5b776ceb55233011b6f18a
+]
+-ContactManagementAPI/Data/ContactDbContext.cs,c\b\cb0d86ce99780a029192d632d264992a64d26d92
+p
+@ContactManagementAPI/Migrations/ContactDbContextModelSnapshot.cs,a\3\a3f076c970652c04e175d1f9ff02084626cfbca2
+E
+ContactManagement.sln,c\2\c21425edcdabb83db3460432eb09c3117aed32f7
+x
+HContactManagementAPI/Migrations/20240730073838_InitialCreate.Designer.cs,3\3\33820cbf0bc402185d736082bd84b6dc63cd3eb9
+c
+3ContactManagementAPI/Properties/launchSettings.json,5\a\5a67599db5a3913e8d45fdad2a8338e3aa66d393
+o
+?ContactManagementAPI/Migrations/20240730073838_InitialCreate.cs,2\8\28fcca00e0defa360b1316d7dfbb0dae9f4198c0
+a
+1ContactManagementAPI/appsettings.Development.json,e\f\ef97b814b6417fbaced0478c077b74ce0de0c8d2
+`
+0ContactManagementAPI/ContactManagementAPI.csproj,4\5\45bfa4fb9eec3d138e0ce4e86d4d92c942172744
+^
+.ContactManagementAPI/ContactManagementAPI.http,2\7\27ca7dfe065cbc7df438f99def13f6ec07f1cf86
