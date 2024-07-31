@@ -1,5 +1,6 @@
 using ContactManagementAPI.Data;
 using ContactManagementAPI.Models;
+using ContactManagementAPI.Models.Dto;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContactManagementAPI.Repositories;
@@ -15,7 +16,30 @@ public class ContactRepository : IContactRepository
 
     public async Task<IEnumerable<Contact>> GetAllContacts()
     {
-        return await _context.Contacts.ToListAsync();
+        var contacts = await _context.Contacts
+            .Include(c => c.ManagerName)
+            .Select(c => new ContactDto
+            {
+                Id = c.Id,
+                Firstname = c.Firstname,
+                Surname = c.Surname,
+                KnownAs = c.KnownAs,
+                OfficePhone = c.OfficePhone,
+                MobilePhone = c.MobilePhone,
+                StHomePhone = c.StHomePhone,
+                EmailAddress = c.EmailAddress,
+                ManagerNameId = c.ManagerNameId,
+                ManagerName = c.ManagerName.Name,  // Lấy tên của ManagerName
+                ContactType = c.ContactType,
+                BestContactMethod = c.BestContactMethod,
+                JobRole = c.JobRole,
+                Workbase = c.Workbase,
+                JobTitle = c.JobTitle,
+                IsActive = c.IsActive,
+            })
+            .ToListAsync();
+
+        return contacts;
     }
 
     public async Task<Contact?> GetContactById(int id)
