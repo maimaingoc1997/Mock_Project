@@ -1,4 +1,5 @@
 using ContactManagementAPI.Data;
+using ContactManagementAPI.Models;
 using ContactManagementAPI.Repositories;
 using ContactManagementAPI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,9 @@ builder.Services.AddDbContext<ContactDbContext>(options =>
     options.UseMySql(connectionString, serverVersion));
 
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IManagerNameRepository, ManagerNameRepository>();
 builder.Services.AddScoped<ContactService>();
+builder.Services.AddScoped<ManagerNameService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

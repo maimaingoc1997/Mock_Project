@@ -19,7 +19,7 @@ public class Contact
     [EmailAddress] public string EmailAddress { get; set; }
 
     public ManagerName ManagerName { get; set; }
-    //public int ManagerNameId { get; set; }
+    public int ManagerNameId { get; set; }
 
     [Required] public string ContactType { get; set; }
 

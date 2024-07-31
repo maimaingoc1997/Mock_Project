@@ -18,6 +18,6 @@ public class ContactDbContext : DbContext
         modelBuilder.Entity<Contact>()
             .HasOne(p => p.ManagerName)
             .WithMany(a => a.Contacts)
-            .HasForeignKey(b => b.ManagerName);
+            .HasForeignKey(b => b.ManagerNameId);
     }
 }
