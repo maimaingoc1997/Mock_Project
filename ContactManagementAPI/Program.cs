@@ -1,4 +1,6 @@
 using ContactManagementAPI.Data;
+using ContactManagementAPI.Repositories;
+using ContactManagementAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ var serverVersion = new MySqlServerVersion(new Version(8, 0, 23));
 builder.Services.AddDbContext<ContactDbContext>(options =>
     options.UseMySql(connectionString, serverVersion));
 
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<ContactService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

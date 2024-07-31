@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ContactManagementAPI.Migrations
+namespace ContactManagementAPI.Data.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -39,7 +39,7 @@ namespace ContactManagementAPI.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Surname = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    KnowAs = table.Column<string>(type: "longtext", nullable: false)
+                    KnownAs = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     OfficePhone = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),

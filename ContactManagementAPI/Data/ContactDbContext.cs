@@ -15,9 +15,9 @@ public class ContactDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<ManagerName>()
-            .HasMany(p => p.Contacts)
-            .WithOne(a => a.ManagerName)
-            .HasForeignKey(b => b.ManagerNameId);
+        modelBuilder.Entity<Contact>()
+            .HasOne(p => p.ManagerName)
+            .WithMany(a => a.Contacts)
+            .HasForeignKey(b => b.ManagerName);
     }
 }

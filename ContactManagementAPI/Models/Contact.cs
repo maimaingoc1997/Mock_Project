@@ -11,7 +11,7 @@ public class Contact
 
     [Required] public string Surname { get; set; }
 
-    public string KnowAs { get; set; }
+    public string KnownAs { get; set; }
     public string OfficePhone { get; set; }
     public string MobilePhone { get; set; }
     public string StHomePhone { get; set; }
@@ -19,7 +19,7 @@ public class Contact
     [EmailAddress] public string EmailAddress { get; set; }
 
     public ManagerName ManagerName { get; set; }
-    public int ManagerNameId { get; set; }
+    //public int ManagerNameId { get; set; }
 
     [Required] public string ContactType { get; set; }
 

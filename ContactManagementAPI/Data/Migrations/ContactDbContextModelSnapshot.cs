@@ -3,19 +3,16 @@ using ContactManagementAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ContactManagementAPI.Migrations
+namespace ContactManagementAPI.Data.Migrations
 {
     [DbContext(typeof(ContactDbContext))]
-    [Migration("20240730073838_InitialCreate")]
-    partial class InitialCreate
+    partial class ContactDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +56,7 @@ namespace ContactManagementAPI.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("KnowAs")
+                    b.Property<string>("KnownAs")
                         .IsRequired()
                         .HasColumnType("longtext");
 
