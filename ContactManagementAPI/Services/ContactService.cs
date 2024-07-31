@@ -31,5 +31,4 @@ public class ContactService
     {
         await _contactRepository.UpdateContact(contact);
     }
-
 }

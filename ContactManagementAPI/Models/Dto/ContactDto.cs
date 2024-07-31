@@ -22,7 +22,7 @@ public class ContactDto : Contact
     public bool IsActive { get; set; }
 }
 
-public class CreateContactDto : Contact
+public class CreateContactDto 
 {
     [Required] public string Firstname { get; set; }
 
@@ -47,7 +47,7 @@ public class CreateContactDto : Contact
     public bool IsActive { get; set; } = true; // Mặc định là true khi tạo mới
 }
 
-public class UpdateContactDto : Contact
+public class UpdateContactDto 
 {
     public string Firstname { get; set; }
     public string Surname { get; set; }
@@ -65,7 +65,7 @@ public class UpdateContactDto : Contact
     public bool IsActive { get; set; }
 }
 
-public class ManagerNameDto : ManagerName
+public class ManagerNameDto 
 {
     public int Id { get; set; }
     public string Name { get; set; }

@@ -93,14 +93,44 @@ public class ContactsController : Controller
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateContact(int id, [FromBody] Contact contact)
+    public async Task<IActionResult> UpdateContact(int id, [FromBody] UpdateContactDto updateContactDto)
     {
-        if (id != contact.Id)
+        var mContact = await _contactService.GetContactById(id);
+        if (mContact == null)
         {
-            return BadRequest();
+            return NotFound($"Contact with ID {id} not found.");
         }
+        else
+        {
+            var contact = mContact;
+            if (updateContactDto.ManagerNameId != contact.ManagerNameId)
+            {
+                var managerName = await _managerNameService.GetManagerNameById(updateContactDto.ManagerNameId);
+                var managerExists = managerName != null;
+                if (!managerExists)
+                {
+                    return BadRequest("Invalid ManagerNameId");
+                }
+            }
 
-        await _contactService.UpdateContact(contact);
-        return NoContent();
+
+            // Cập nhật thông tin contact
+            contact.Firstname = updateContactDto.Firstname;
+            contact.Surname = updateContactDto.Surname;
+            contact.KnownAs = updateContactDto.KnownAs;
+            contact.OfficePhone = updateContactDto.OfficePhone;
+            contact.MobilePhone = updateContactDto.MobilePhone;
+            contact.StHomePhone = updateContactDto.StHomePhone;
+            contact.EmailAddress = updateContactDto.EmailAddress;
+            contact.ManagerNameId = updateContactDto.ManagerNameId;
+            contact.ContactType = updateContactDto.ContactType;
+            contact.BestContactMethod = updateContactDto.BestContactMethod;
+            contact.JobRole = updateContactDto.JobRole;
+            contact.Workbase = updateContactDto.Workbase;
+            contact.JobTitle = updateContactDto.JobTitle;
+            contact.IsActive = updateContactDto.IsActive;
+            await _contactService.UpdateContact(contact);
+            return NoContent();
+        }
     }
 }
